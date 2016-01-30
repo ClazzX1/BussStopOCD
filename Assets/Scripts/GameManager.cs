@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public enum InGameState
 {
@@ -58,7 +59,17 @@ public class GameManager : MonoBehaviour
 		round = 0;
         StageStart();
     }
-	
+
+	void OnDestroy()
+	{
+		MovePattern.OnPatternFrameChange -= OnPatternFrameChange;
+		MovePattern.OnPatternPlayerTurnStart -= OnPatternPlayerTurnStart;
+		MovePattern.OnPatternComplete -= OnPatternComplete;
+		MovePattern.OnPatternFailed -= OnPatternFailed;
+		MovePattern.OnCorrectMove -= OnCorrectMove;
+		BeatManager.OnBeat -= OnBeat;
+	}
+
 	void Update ()
     {
 		if (state == InGameState.BUSS_COMING) 
@@ -72,8 +83,14 @@ public class GameManager : MonoBehaviour
 		} 
 		else if (state == InGameState.PATTERN_FAIL) 
 		{
-			state = InGameState.AMBULANCE_COMING;
-			ambulanceBuss.StartBussComing ();
+			--HeartCounter.totalHearts;
+			if (HeartCounter.totalHearts <= 0) {
+				state = InGameState.AMBULANCE_COMING;
+				ambulanceBuss.StartBussComing ();
+			}
+			else
+			{
+			}
 		}
 		else if (state == InGameState.PATTERN_COMPLETE) 
 		{
@@ -185,7 +202,8 @@ public class GameManager : MonoBehaviour
 
 	private void OnBeat()
 	{
-		beatIndicator.SetTrigger("HeartBeat");
+		if (beatIndicator)
+			beatIndicator.SetTrigger("HeartBeat");
 	}
 
 	private void OnPatternFrameChange(int frameIndex)
@@ -209,8 +227,15 @@ public class GameManager : MonoBehaviour
 
 	private void OnPatternFailed()
 	{
-		state = InGameState.PATTERN_FAIL;
+		--HeartCounter.totalHearts;
 		redFlash.TriggerFlash();
+
+		if (HeartCounter.totalHearts <= 0) 
+		{
+			movePattern.StopPattern ();
+			state = InGameState.AMBULANCE_COMING;
+			ambulanceBuss.StartBussComing ();
+		}
 	}
 
 	private void BussArrived()
@@ -235,8 +260,9 @@ public class GameManager : MonoBehaviour
 	{
 		ScoreList.Instance.AddScore(score, "");
 		UpdateScore(0);
-		round = 0;
-		StageStart();
+
+		HeartCounter.totalHearts = 3;
+		SceneManager.LoadScene("StartMenu");
 	}
 
 	private void OnCorrectMove()
