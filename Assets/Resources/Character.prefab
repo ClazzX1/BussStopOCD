@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 449322}
   - 212: {fileID: 21211870}
   - 114: {fileID: 11405478}
+  - 82: {fileID: 8240834}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -29,6 +30,80 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!82 &8240834
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187988}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 1
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &11405478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -40,7 +115,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e974a10864b5742b7302a2e3b51a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smokingAudio: []
+  smokingAudio:
+  - {fileID: 8300000, guid: 6e95ca8fbd1164f9c809ee4aacaed698, type: 3}
+  - {fileID: 8300000, guid: 877ab0d35621743fba50c109ee8e2482, type: 3}
+  coughingAudio:
+  - {fileID: 8300000, guid: 194e070ce0afe4511843242177fd3ab7, type: 3}
+  - {fileID: 8300000, guid: 39b3ed5b1790b4b2b839b30a985a7c30, type: 3}
+  - {fileID: 8300000, guid: cf4d097f6b48e40aea09bb3f2b812b02, type: 3}
+  phoneAudio:
+  - {fileID: 8300000, guid: ae1590c7b51f7463bafb671778a87530, type: 3}
+  busAudio:
+  - {fileID: 8300000, guid: 03e76be0336c1478d8db41ded102b528, type: 3}
+  - {fileID: 8300000, guid: d58d5250223234334a7ed4c33b65d40b, type: 3}
+  - {fileID: 8300000, guid: 53976531aa1b247ddaf1178676578208, type: 3}
+  - {fileID: 8300000, guid: 7bbc35c835bf942a2a18d51327184012, type: 3}
 --- !u!212 &21211870
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -79,9 +167,81 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: busAudio.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: phoneAudio.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: smokingAudio.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: coughingAudio.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: BypassListenerEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: smokingAudio.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e95ca8fbd1164f9c809ee4aacaed698, type: 3}
+    - target: {fileID: 0}
+      propertyPath: smokingAudio.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 877ab0d35621743fba50c109ee8e2482, type: 3}
+    - target: {fileID: 0}
+      propertyPath: coughingAudio.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 194e070ce0afe4511843242177fd3ab7, type: 3}
+    - target: {fileID: 0}
+      propertyPath: coughingAudio.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 39b3ed5b1790b4b2b839b30a985a7c30, type: 3}
+    - target: {fileID: 0}
+      propertyPath: coughingAudio.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: cf4d097f6b48e40aea09bb3f2b812b02, type: 3}
+    - target: {fileID: 0}
+      propertyPath: phoneAudio.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ae1590c7b51f7463bafb671778a87530, type: 3}
+    - target: {fileID: 0}
+      propertyPath: busAudio.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 03e76be0336c1478d8db41ded102b528, type: 3}
+    - target: {fileID: 0}
+      propertyPath: busAudio.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d58d5250223234334a7ed4c33b65d40b, type: 3}
+    - target: {fileID: 0}
+      propertyPath: busAudio.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 53976531aa1b247ddaf1178676578208, type: 3}
+    - target: {fileID: 0}
+      propertyPath: busAudio.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7bbc35c835bf942a2a18d51327184012, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 187988}
