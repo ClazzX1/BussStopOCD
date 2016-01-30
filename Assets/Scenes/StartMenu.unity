@@ -312,7 +312,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 264053782}
-<<<<<<< HEAD
 --- !u!1 &274189106
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,8 +364,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-=======
->>>>>>> 4a4e32d44b810b6100bf572be6893eddeea801b0
 --- !u!1 &895178404
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +808,6 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1691146222}
   m_OnClick:
     m_PersistentCalls:
-<<<<<<< HEAD
       m_Calls:
       - m_Target: {fileID: 274189107}
         m_MethodName: TriggerLevelChange
@@ -824,9 +820,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-=======
-      m_Calls: []
->>>>>>> 4a4e32d44b810b6100bf572be6893eddeea801b0
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1691146222
