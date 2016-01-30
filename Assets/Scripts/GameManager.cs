@@ -53,8 +53,7 @@ public class GameManager : MonoBehaviour
 		MovePattern.OnCorrectMove += OnCorrectMove;
 		BeatManager.OnBeat += OnBeat;
 
-		beatIndicator.speed = beatManager.speed;
-
+		ChangeSpeed(beatManager.speed);
 		UpdateScore(0);
 		round = 0;
         StageStart();
@@ -149,10 +148,41 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	public void ChangeSpeed(float newSpeed)
+	{
+		beatManager.speed = newSpeed;
+		beatIndicator.speed = newSpeed;
+
+		// TODO: change music speed
+
+		if (player) 
+		{
+			Animator playerAnimator = player.gameObject.GetComponent<Animator> ();
+			if (playerAnimator)
+				playerAnimator.speed = newSpeed;
+		}
+		foreach (Character character in characters) 
+		{
+			Animator animator = player.gameObject.GetComponent<Animator> ();
+			if (animator)
+				animator.speed = newSpeed;
+		}
+	}
+
     public void StageStart()
     {
 		state = InGameState.BUSS_COMING;
 		++round;
+
+		if (round == 1)
+			ChangeSpeed(0.75f);
+		if (round == 2)
+			ChangeSpeed(1.0f);
+		if (round == 3)
+			ChangeSpeed(1.5f);
+		if (round == 4)
+			ChangeSpeed(1.0f);
+
 		buss.StartBussComing();
     }
 
