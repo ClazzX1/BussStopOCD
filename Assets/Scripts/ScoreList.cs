@@ -40,15 +40,23 @@ public class ScoreList : MonoBehaviour
 		}
 	}
 
+	private static int SortByScore(ScoreInfo o1, ScoreInfo o2) 
+	{
+		return o2.score - o1.score;
+	}
+
 	public void AddScore(int score, string name)
 	{
 		ScoreInfo info = new ScoreInfo();
 		info.score = score;
 		info.name = name;
 		data.scoreList.Add(info);
+		data.scoreList.Sort(SortByScore);
 
 		if (data.scoreList.Count > listSize)
 			data.scoreList.RemoveAt(data.scoreList.Count - 1);
+
+		Save ();
 	}
 
 	void Awake()

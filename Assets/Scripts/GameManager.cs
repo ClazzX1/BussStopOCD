@@ -205,7 +205,6 @@ public class GameManager : MonoBehaviour
 	private void OnPatternComplete()
 	{
 		state = InGameState.PATTERN_COMPLETE;
-		++round; 
 	}
 
 	private void OnPatternFailed()
@@ -234,6 +233,7 @@ public class GameManager : MonoBehaviour
 
 	private void AmbulanceGoneAway()
 	{
+		ScoreList.Instance.AddScore(score, "");
 		UpdateScore(0);
 		round = 0;
 		StageStart();
