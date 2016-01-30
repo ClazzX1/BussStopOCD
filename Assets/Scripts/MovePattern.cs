@@ -26,13 +26,11 @@ public class MovePattern : MonoBehaviour
 
 	private List<int> moveList = new List<int>();
 	public int currentFrame;
+	public int playerMoveFrame = 0;
 	private float nextMoveTimer;
 
 	private float startTime = 0.0f;
 	private float lengthTime = 0.0f;
-
-	private float playerLastMoveTime = 0.0f;
-	private int playerLastMove = -1;
 
 	private BeatManager beatManager;
 
@@ -43,7 +41,13 @@ public class MovePattern : MonoBehaviour
 		BeatManager.OnBeat += OnBeat;
 		BeatManager.OnAfterBeat += OnAfterBeat;
 	}
-	
+
+	void OnDestroy()
+	{
+		BeatManager.OnBeat -= OnBeat;
+		BeatManager.OnAfterBeat -= OnAfterBeat;
+	}
+
 	void Update() 
 	{
 	}
@@ -56,17 +60,25 @@ public class MovePattern : MonoBehaviour
 		RestartPattern();
 	}
 
+	public void StopPattern()
+	{
+		patternState = PatternState.FINISHED;
+	}
+
 	public void PlayerDidMove(int moveIndex)
 	{
 		if (patternState == PatternState.PLAYER_TURN_WAIT_INPUT) 
 		{
 			bool isFail = false;
-			currentFrame = 0;
+			currentFrame = -1;
+			playerMoveFrame = 0;
 
 			if (!beatManager.IsInTheBeat())
 				isFail = true;			
-			if (moveIndex != moveList[currentFrame])
+			if (moveIndex != moveList[playerMoveFrame])
 				isFail = true;
+
+			++playerMoveFrame;
 
 			if (isFail)
 				PatternFailed();
@@ -74,10 +86,9 @@ public class MovePattern : MonoBehaviour
 			{
 				if (OnCorrectMove != null)
 					OnCorrectMove ();
-				
-				patternState = PatternState.PLAYER_TURN;
-				++currentFrame;
 			}
+
+			patternState = PatternState.PLAYER_TURN;
 		}
 		else if (patternState == PatternState.PLAYER_TURN) 
 		{
@@ -85,31 +96,30 @@ public class MovePattern : MonoBehaviour
 
 			if (!beatManager.IsInTheBeat())
 				isFail = true;
-			if (moveIndex != moveList[currentFrame])
+			if (moveIndex != moveList[playerMoveFrame])
 				isFail = true;
+
+			++playerMoveFrame;
 
 			if (isFail)
 				PatternFailed();
 			else
 			{
-				++currentFrame;
 				if (OnCorrectMove != null)
 					OnCorrectMove ();
-				if (currentFrame >= moveList.Count)
+				if (playerMoveFrame >= moveList.Count)
 				{
 					PatternComplete ();
 				}
 			}
 		}
-
-		playerLastMove = moveIndex;
-		playerLastMoveTime = Time.fixedTime;
 	}
 
 	private void RestartPattern()
 	{
 		startTime = Time.fixedTime;
 		currentFrame = -1;
+		playerMoveFrame = 0;
 	}
 
 	private void StartPlayerTurn()
@@ -118,7 +128,6 @@ public class MovePattern : MonoBehaviour
 			OnPatternPlayerTurnStart();
 		
 		patternState = PatternState.PLAYER_TURN_WAIT_INPUT;
-		playerLastMove = -1;
 		RestartPattern();
 	}
 
@@ -160,7 +169,7 @@ public class MovePattern : MonoBehaviour
 		if (OnPatternFailed != null)
 			OnPatternFailed();
 
-		patternState = PatternState.FINISHED;
+		// patternState = PatternState.FINISHED;
 	}
 
 	private void OnBeat()
@@ -179,9 +188,15 @@ public class MovePattern : MonoBehaviour
 	{
 		if (patternState == PatternState.PLAYER_TURN) 
 		{
-			if (playerLastMove == -1) 
+			++currentFrame;
+			if (currentFrame > moveList.Count) 
 			{
-				PatternFailed();
+				PatternComplete ();
+			}
+			else 
+			{
+				if (currentFrame >= playerMoveFrame)
+					PatternFailed ();
 			}
 		}
 	}

@@ -7,13 +7,18 @@ public class HeartCounter : MonoBehaviour
 
 	public int heartIndex = 0;
 
-	void Start () 
+	private SpriteRenderer sprite;
+
+	void Start() 
 	{
-	
+		sprite = GetComponent<SpriteRenderer>();
 	}
 	
-	void Update () 
+	void Update() 
 	{
-	
+		if (totalHearts <= heartIndex)
+			sprite.enabled = false;
+		else
+			sprite.enabled = true;
 	}
 }

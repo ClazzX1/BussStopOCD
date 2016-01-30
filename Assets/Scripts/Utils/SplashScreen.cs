@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SplashScreen : MonoBehaviour
 {
@@ -78,7 +79,7 @@ public class SplashScreen : MonoBehaviour
         if (isExit && !isAlreadyCallExit)
         {
             isAlreadyCallExit = true;
-            Application.LoadLevel(isRequestCustomLevelChange ? customTargetLevel : targetLevel);
+			SceneManager.LoadScene(isRequestCustomLevelChange ? customTargetLevel : targetLevel);
         }
     }
 

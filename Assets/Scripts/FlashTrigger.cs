@@ -19,7 +19,7 @@ public class FlashTrigger : MonoBehaviour
 		{
 			flashAnim = Mathf.Max(0.0f, flashAnim - Time.deltaTime);
 			Color color = image.color;
-			color.a = Mathf.Sin(flashAnim * Mathf.PI);
+			color.a = Mathf.Lerp (0.0f, 1.0f, flashAnim);
 			image.color = color;
 		}
 	}
