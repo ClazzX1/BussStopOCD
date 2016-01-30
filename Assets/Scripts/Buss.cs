@@ -1,15 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Buss : MonoBehaviour {
+public class Buss : MonoBehaviour 
+{
+	private Animator animator;
 
-	// Use this for initialization
-	void Start () {
-	
+	public bool isArrived = false;
+	public bool isGoneAway = false;
+
+	void Start () 
+	{
+		animator = GetComponent<Animator>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void Update () 
+	{
+	}
+
+	public void StartBussComing()
+	{
+		isArrived = false;
+		isGoneAway = false;
+		animator.SetTrigger("BussStart");
+	}
+
+	// called from animation
+	public void BussArrived()
+	{
+		isArrived = true;
+	}
+
+	// called from animation
+	public void BussGoneAway()
+	{
+		isGoneAway = true;
 	}
 }
