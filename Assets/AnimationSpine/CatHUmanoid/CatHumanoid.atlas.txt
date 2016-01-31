@@ -1,0 +1,132 @@
+
+CatHumanoid.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Face
+  rotate: false
+  xy: 864, 447
+  size: 101, 63
+  orig: 103, 65
+  offset: 1, 1
+  index: -1
+Face2
+  rotate: false
+  xy: 525, 231
+  size: 101, 63
+  orig: 103, 65
+  offset: 1, 1
+  index: -1
+Head
+  rotate: false
+  xy: 727, 345
+  size: 135, 165
+  orig: 137, 167
+  offset: 1, 1
+  index: -1
+LFoot
+  rotate: false
+  xy: 727, 323
+  size: 58, 20
+  orig: 60, 22
+  offset: 1, 1
+  index: -1
+RFoot
+  rotate: false
+  xy: 727, 323
+  size: 58, 20
+  orig: 60, 22
+  offset: 1, 1
+  index: -1
+LLowerArm
+  rotate: false
+  xy: 628, 234
+  size: 73, 60
+  orig: 75, 62
+  offset: 1, 1
+  index: -1
+LLowerLeg
+  rotate: true
+  xy: 2, 11
+  size: 16, 141
+  orig: 18, 143
+  offset: 1, 1
+  index: -1
+RUpperLeg
+  rotate: true
+  xy: 2, 11
+  size: 16, 141
+  orig: 18, 143
+  offset: 1, 1
+  index: -1
+RLowerLeg
+  rotate: true
+  xy: 2, 11
+  size: 16, 141
+  orig: 18, 143
+  offset: 1, 1
+  index: -1
+LUpperLeg
+  rotate: true
+  xy: 2, 11
+  size: 16, 141
+  orig: 18, 143
+  offset: 1, 1
+  index: -1
+LUpperArm
+  rotate: false
+  xy: 241, 2
+  size: 44, 84
+  orig: 46, 86
+  offset: 1, 1
+  index: -1
+Phone
+  rotate: false
+  xy: 2, 29
+  size: 237, 481
+  orig: 325, 591
+  offset: 46, 59
+  index: -1
+RLowerArm
+  rotate: false
+  xy: 864, 384
+  size: 73, 61
+  orig: 75, 63
+  offset: 1, 1
+  index: -1
+RUpperArm
+  rotate: false
+  xy: 287, 2
+  size: 44, 84
+  orig: 46, 86
+  offset: 1, 1
+  index: -1
+Shorts
+  rotate: false
+  xy: 434, 100
+  size: 86, 74
+  orig: 88, 76
+  offset: 1, 1
+  index: -1
+Sigarette
+  rotate: true
+  xy: 241, 296
+  size: 214, 484
+  orig: 256, 512
+  offset: 14, 13
+  index: -1
+Tail
+  rotate: false
+  xy: 241, 88
+  size: 191, 206
+  orig: 193, 208
+  offset: 1, 1
+  index: -1
+Torso
+  rotate: false
+  xy: 434, 176
+  size: 89, 118
+  orig: 91, 120
+  offset: 1, 1
+  index: -1

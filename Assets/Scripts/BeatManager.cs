@@ -3,6 +3,8 @@ using System.Collections;
 
 public class BeatManager : MonoBehaviour 
 {
+	public static float beatTimer = 0.0f;
+
 	public delegate void BeatAction();
 	public static event BeatAction OnBeat;
 	public static event BeatAction OnAfterBeat;
@@ -10,10 +12,9 @@ public class BeatManager : MonoBehaviour
 	public float speed = 1.0f;
 	public float beatWindowSize = 0.1f;
 
-	private float beatTimer = 0.0f;
-
 	void Start () 
 	{	
+		beatTimer = 0.0f;
 	}
 
 	void Update () 

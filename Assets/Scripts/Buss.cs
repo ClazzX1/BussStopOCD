@@ -8,9 +8,13 @@ public class Buss : MonoBehaviour
 	public bool isArrived = false;
 	public bool isGoneAway = false;
 
+	AudioSource audioSource;
+	public AudioClip vehicleAudio;
+
 	void Start () 
 	{
 		animator = GetComponent<Animator>();
+		audioSource = GetComponent<AudioSource> ();
 	}
 
 	void Update () 
@@ -22,6 +26,7 @@ public class Buss : MonoBehaviour
 		isArrived = false;
 		isGoneAway = false;
 		animator.SetTrigger("BussStart");
+		audioSource.PlayOneShot (vehicleAudio);
 	}
 
 	// called from animation

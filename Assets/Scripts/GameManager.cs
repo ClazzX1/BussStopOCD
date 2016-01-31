@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour
 	public SpriteRenderer beatIndicatorSprite;
 	public FlashTrigger redFlash;
 	public Text highscoreText;
+	public List<AudioClip> musicClips;
+	public MusicPlayer musicPlayer;
+
+	public SkeletonDataAsset playerSkeleton;
+	public List<SkeletonDataAsset> otherSkeletons;
 
     private int round = 1;
 	private int score = 0;
@@ -44,7 +49,7 @@ public class GameManager : MonoBehaviour
 	void Start ()
     {
 		movePattern = GetComponent<MovePattern>();
-		beatManager = GetComponent<BeatManager>(); 
+		beatManager = GetComponent<BeatManager>();
 
 		MovePattern.OnPatternFrameChange += OnPatternFrameChange;
 		MovePattern.OnPatternPlayerTurnStart += OnPatternPlayerTurnStart;
@@ -53,7 +58,7 @@ public class GameManager : MonoBehaviour
 		MovePattern.OnCorrectMove += OnCorrectMove;
 		BeatManager.OnBeat += OnBeat;
 
-		ChangeSpeed(beatManager.speed);
+		ChangeSpeed(1.0f);
 		UpdateScore(0);
 		round = 0;
         StageStart();
@@ -103,8 +108,11 @@ public class GameManager : MonoBehaviour
 		}
 		else if (state == InGameState.AMBULANCE_LEAVING) 
 		{
-			if (ambulanceBuss.isGoneAway)
-				AmbulanceGoneAway();
+			if (ambulanceBuss.isGoneAway) 
+			{
+				AmbulanceGoneAway ();
+				state = InGameState.IDLE;
+			}
 		}
 		else if (state == InGameState.END_BUSS_COMING) 
 		{
@@ -122,10 +130,13 @@ public class GameManager : MonoBehaviour
 			}
 		} 
 
-		Color color = Color.white;
-		if (state != InGameState.OTHERS_TURN &&	state != InGameState.PLAYER_TURN)
-			color.a = 0.0f;
-		beatIndicatorSprite.color = color;
+		if (beatIndicatorSprite) 
+		{
+			Color color = Color.red;
+			if (state != InGameState.OTHERS_TURN &&	state != InGameState.PLAYER_TURN)
+				color.a = 0.0f;
+			beatIndicatorSprite.color = color;
+		}
 
 		if (player)
 		{
@@ -153,19 +164,19 @@ public class GameManager : MonoBehaviour
 		beatManager.speed = newSpeed;
 		beatIndicator.speed = newSpeed;
 
-		// TODO: change music speed
+		// TODO: change music speed?
 
 		if (player) 
 		{
 			Animator playerAnimator = player.gameObject.GetComponent<Animator> ();
 			if (playerAnimator)
-				playerAnimator.speed = newSpeed;
+				playerAnimator.speed = newSpeed * 1.5f;
 		}
 		foreach (Character character in characters) 
 		{
-			Animator animator = player.gameObject.GetComponent<Animator> ();
+			Animator animator = character.gameObject.GetComponent<Animator> ();
 			if (animator)
-				animator.speed = newSpeed;
+				animator.speed = newSpeed * 1.5f;
 		}
 	}
 
@@ -175,30 +186,36 @@ public class GameManager : MonoBehaviour
 		++round;
 
 		if (round == 1)
-			ChangeSpeed(0.75f);
+			ChangeSpeed(1.3333f);
 		if (round == 2)
-			ChangeSpeed(1.0f);
-		if (round == 3)
 			ChangeSpeed(1.5f);
+		if (round == 3)
+			ChangeSpeed(1.6666f);
 		if (round == 4)
-			ChangeSpeed(1.0f);
+			ChangeSpeed(1.6666f);
+
+		if (musicClips.Count >= round)
+			musicPlayer.playMusic(musicClips[round - 1]);
+
+		if (musicClips.Count >= round)
+			musicPlayer.playMusic(musicClips[round - 1]);
 
 		buss.StartBussComing();
     }
 
 	public void SpawnCharacters()
 	{
-		int characterCount = 1 + round;
+		int characterCount = 1 + round / 2;
 		for (int i = 0; i < characterCount; ++i)
 		{
 			Vector3 position = spawnPoint.position;
-			float offsetX = (float)((i + 1) / 2) * 1.0f;
+			float offsetX = (float)((i + 1) / 2) * 2.2f;
 			position.x += (i % 2 == 0 ? -offsetX : offsetX);
-			Character character = CreateCharacter(position);
+			Character character = CreateCharacter(position, false);
 			characters.Add(character);
 		}
 			
-		player = CreateCharacter(playerSpawnPoint.position);
+		player = CreateCharacter(playerSpawnPoint.position, true);
 	}
 
 	public void KillCharacters()
@@ -216,7 +233,7 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	Character CreateCharacter(Vector3 position)
+	Character CreateCharacter(Vector3 position, bool isPlayer)
     {
         GameObject newObject = (GameObject)Instantiate(Resources.Load("Character"));
         newObject.transform.parent = transform;
@@ -225,6 +242,21 @@ public class GameManager : MonoBehaviour
 		Animator animator = newObject.GetComponent<Animator>();
 		if (animator)
 			animator.speed = beatManager.speed;
+
+		if (isPlayer) 
+		{
+			SkeletonAnimation skeletonAnimation = newObject.GetComponent<SkeletonAnimation> ();
+			skeletonAnimation.skeletonDataAsset = playerSkeleton;
+			skeletonAnimation.Reset ();
+		}
+		else
+		{
+			int index = Random.Range(0, otherSkeletons.Count);
+
+			SkeletonAnimation skeletonAnimation = newObject.GetComponent<SkeletonAnimation> ();
+			skeletonAnimation.skeletonDataAsset = otherSkeletons[index];
+			skeletonAnimation.Reset ();
+		}
 
 		Character character = newObject.GetComponent<Character>();
 		return character;
@@ -262,6 +294,7 @@ public class GameManager : MonoBehaviour
 
 		if (HeartCounter.totalHearts <= 0) 
 		{
+			player.Faint ();
 			movePattern.StopPattern ();
 			state = InGameState.AMBULANCE_COMING;
 			ambulanceBuss.StartBussComing ();
@@ -277,7 +310,7 @@ public class GameManager : MonoBehaviour
 	private void BussGoneAway()
 	{
 		state = InGameState.OTHERS_TURN;
-		movePattern.StartPattern(2 + round, 2.5f);
+		movePattern.StartPattern(2 + round / 2, 2.5f);
 	}
 
 	private void AmbulanceArrived()
