@@ -1,0 +1,97 @@
+
+Muscle.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Face
+  rotate: true
+  xy: 2, 12
+  size: 76, 99
+  orig: 78, 101
+  offset: 1, 1
+  index: -1
+Head
+  rotate: false
+  xy: 2, 90
+  size: 194, 156
+  orig: 196, 158
+  offset: 1, 1
+  index: -1
+LFoot
+  rotate: false
+  xy: 103, 63
+  size: 61, 25
+  orig: 63, 27
+  offset: 1, 1
+  index: -1
+LLowerArm
+  rotate: false
+  xy: 366, 178
+  size: 100, 68
+  orig: 102, 70
+  offset: 1, 1
+  index: -1
+LLowerLeg
+  rotate: false
+  xy: 468, 145
+  size: 24, 101
+  orig: 26, 103
+  offset: 1, 1
+  index: -1
+LUpperArm
+  rotate: true
+  xy: 366, 57
+  size: 49, 107
+  orig: 51, 109
+  offset: 1, 1
+  index: -1
+LUpperLeg
+  rotate: true
+  xy: 212, 54
+  size: 24, 101
+  orig: 26, 103
+  offset: 1, 1
+  index: -1
+RFoot
+  rotate: true
+  xy: 315, 17
+  size: 61, 25
+  orig: 63, 27
+  offset: 1, 1
+  index: -1
+RLowerArm
+  rotate: false
+  xy: 366, 108
+  size: 100, 68
+  orig: 102, 70
+  offset: 1, 1
+  index: -1
+RLowerLeg
+  rotate: true
+  xy: 212, 28
+  size: 24, 101
+  orig: 26, 103
+  offset: 1, 1
+  index: -1
+RUpperArm
+  rotate: true
+  xy: 103, 12
+  size: 49, 107
+  orig: 51, 109
+  offset: 1, 1
+  index: -1
+RUpperLeg
+  rotate: true
+  xy: 212, 2
+  size: 24, 101
+  orig: 26, 103
+  offset: 1, 1
+  index: -1
+Torso
+  rotate: false
+  xy: 198, 80
+  size: 166, 166
+  orig: 168, 168
+  offset: 1, 1
+  index: -1
