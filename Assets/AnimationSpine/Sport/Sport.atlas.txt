@@ -1,0 +1,111 @@
+
+Sport.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Face 2
+  rotate: false
+  xy: 241, 26
+  size: 87, 76
+  orig: 89, 78
+  offset: 1, 1
+  index: -1
+Head
+  rotate: false
+  xy: 241, 104
+  size: 151, 181
+  orig: 153, 183
+  offset: 1, 1
+  index: -1
+LFoot
+  rotate: false
+  xy: 727, 301
+  size: 58, 20
+  orig: 60, 22
+  offset: 1, 1
+  index: -1
+LLowerArm
+  rotate: true
+  xy: 330, 29
+  size: 73, 60
+  orig: 75, 62
+  offset: 1, 1
+  index: -1
+LLowerLeg
+  rotate: true
+  xy: 2, 2
+  size: 16, 141
+  orig: 18, 143
+  offset: 1, 1
+  index: -1
+LUpperArm
+  rotate: false
+  xy: 813, 399
+  size: 44, 84
+  orig: 46, 86
+  offset: 1, 1
+  index: -1
+LUpperLeg
+  rotate: false
+  xy: 394, 144
+  size: 16, 141
+  orig: 18, 143
+  offset: 1, 1
+  index: -1
+Phone
+  rotate: false
+  xy: 2, 20
+  size: 237, 481
+  orig: 325, 591
+  offset: 46, 59
+  index: -1
+RFoot
+  rotate: false
+  xy: 859, 463
+  size: 58, 20
+  orig: 60, 22
+  offset: 1, 1
+  index: -1
+RLowerArm
+  rotate: false
+  xy: 727, 323
+  size: 73, 61
+  orig: 75, 63
+  offset: 1, 1
+  index: -1
+RLowerLeg
+  rotate: true
+  xy: 813, 485
+  size: 16, 141
+  orig: 18, 143
+  offset: 1, 1
+  index: -1
+RUpperArm
+  rotate: false
+  xy: 430, 201
+  size: 44, 84
+  orig: 46, 86
+  offset: 1, 1
+  index: -1
+RUpperLeg
+  rotate: false
+  xy: 412, 144
+  size: 16, 141
+  orig: 18, 143
+  offset: 1, 1
+  index: -1
+Sigarette
+  rotate: true
+  xy: 241, 287
+  size: 214, 484
+  orig: 256, 512
+  offset: 14, 13
+  index: -1
+Torso
+  rotate: false
+  xy: 727, 386
+  size: 84, 115
+  orig: 86, 117
+  offset: 1, 1
+  index: -1

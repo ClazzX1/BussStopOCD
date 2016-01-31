@@ -41,7 +41,7 @@ public class Character : MonoBehaviour
 	{
 		if (moveIndex == 0) 
 		{
-			spine.state.SetAnimation(0, "SmokeCough", false);
+			spine.state.SetAnimation(0, "Cough", false);
 			int index = Random.Range (0, coughingAudio.Count);
 			audioSource.PlayOneShot (coughingAudio [index]);
 		}
@@ -53,7 +53,7 @@ public class Character : MonoBehaviour
 		}
 		if (moveIndex == 2) 
 		{
-			spine.state.SetAnimation(0, "SmokeCough", false);
+			spine.state.SetAnimation(0, "Smoke", false);
 			int index = Random.Range (0, smokingAudio.Count);
 			audioSource.PlayOneShot (smokingAudio [index]);
 		}

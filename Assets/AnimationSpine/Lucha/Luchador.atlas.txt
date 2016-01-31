@@ -1,0 +1,104 @@
+
+Luchador.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Head
+  rotate: false
+  xy: 727, 376
+  size: 161, 131
+  orig: 163, 133
+  offset: 1, 1
+  index: -1
+LFoot
+  rotate: false
+  xy: 2, 2
+  size: 56, 22
+  orig: 58, 24
+  offset: 1, 1
+  index: -1
+LLowerArm
+  rotate: true
+  xy: 727, 334
+  size: 40, 108
+  orig: 42, 110
+  offset: 1, 1
+  index: -1
+LLowerLeg
+  rotate: true
+  xy: 494, 257
+  size: 34, 112
+  orig: 36, 114
+  offset: 1, 1
+  index: -1
+LUpperArm
+  rotate: true
+  xy: 241, 27
+  size: 90, 92
+  orig: 92, 94
+  offset: 1, 1
+  index: -1
+LUpperLeg
+  rotate: true
+  xy: 494, 221
+  size: 34, 112
+  orig: 36, 114
+  offset: 1, 1
+  index: -1
+Phone
+  rotate: false
+  xy: 2, 26
+  size: 237, 481
+  orig: 325, 591
+  offset: 46, 59
+  index: -1
+RFoot
+  rotate: false
+  xy: 335, 95
+  size: 56, 22
+  orig: 58, 24
+  offset: 1, 1
+  index: -1
+RLowerArm
+  rotate: false
+  xy: 890, 399
+  size: 40, 108
+  orig: 42, 110
+  offset: 1, 1
+  index: -1
+RLowerLeg
+  rotate: true
+  xy: 608, 257
+  size: 34, 112
+  orig: 36, 114
+  offset: 1, 1
+  index: -1
+RUpperArm
+  rotate: false
+  xy: 402, 199
+  size: 90, 92
+  orig: 92, 94
+  offset: 1, 1
+  index: -1
+RUpperLeg
+  rotate: true
+  xy: 608, 221
+  size: 34, 112
+  orig: 36, 114
+  offset: 1, 1
+  index: -1
+Sigarette
+  rotate: true
+  xy: 241, 293
+  size: 214, 484
+  orig: 256, 512
+  offset: 14, 13
+  index: -1
+Torso
+  rotate: false
+  xy: 241, 119
+  size: 159, 172
+  orig: 161, 174
+  offset: 1, 1
+  index: -1

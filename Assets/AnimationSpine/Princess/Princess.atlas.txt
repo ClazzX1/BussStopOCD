@@ -1,0 +1,97 @@
+
+Princess.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Face
+  rotate: false
+  xy: 603, 231
+  size: 89, 57
+  orig: 91, 59
+  offset: 1, 1
+  index: -1
+Head
+  rotate: false
+  xy: 727, 366
+  size: 185, 138
+  orig: 187, 140
+  offset: 1, 1
+  index: -1
+LLowerArm
+  rotate: true
+  xy: 241, 33
+  size: 86, 98
+  orig: 88, 100
+  offset: 1, 1
+  index: -1
+LLowerLeg
+  rotate: true
+  xy: 727, 324
+  size: 19, 135
+  orig: 21, 137
+  offset: 1, 1
+  index: -1
+LUpperArm
+  rotate: false
+  xy: 914, 392
+  size: 56, 112
+  orig: 58, 114
+  offset: 1, 1
+  index: -1
+LUpperLeg
+  rotate: true
+  xy: 2, 2
+  size: 19, 157
+  orig: 21, 159
+  offset: 1, 1
+  index: -1
+Phone
+  rotate: false
+  xy: 2, 23
+  size: 237, 481
+  orig: 325, 591
+  offset: 46, 59
+  index: -1
+RLowerArm
+  rotate: false
+  xy: 401, 190
+  size: 86, 98
+  orig: 88, 100
+  offset: 1, 1
+  index: -1
+RLowerLeg
+  rotate: true
+  xy: 727, 303
+  size: 19, 135
+  orig: 21, 137
+  offset: 1, 1
+  index: -1
+RUpperArm
+  rotate: true
+  xy: 489, 232
+  size: 56, 112
+  orig: 58, 114
+  offset: 1, 1
+  index: -1
+RUpperLeg
+  rotate: true
+  xy: 727, 345
+  size: 19, 157
+  orig: 21, 159
+  offset: 1, 1
+  index: -1
+Sigarette
+  rotate: true
+  xy: 241, 290
+  size: 214, 484
+  orig: 256, 512
+  offset: 14, 13
+  index: -1
+Torso
+  rotate: false
+  xy: 241, 121
+  size: 158, 167
+  orig: 160, 169
+  offset: 1, 1
+  index: -1

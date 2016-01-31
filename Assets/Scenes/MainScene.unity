@@ -3083,6 +3083,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e82603f039f644d2982943f9f1613709, type: 3}
   - {fileID: 8300000, guid: 8f6d49a13b4504df489a5ec1ba1ba2a3, type: 3}
   musicPlayer: {fileID: 731418303}
+  playerSkeleton: {fileID: 11400000, guid: c53f42de0c1634d298aa3ca29c0d3ffc, type: 2}
+  otherSkeletons:
+  - {fileID: 11400000, guid: 3db1468e600ff41b3904ef21c29b5c92, type: 2}
+  - {fileID: 11400000, guid: 267871f75857b4872b4abcf10717875e, type: 2}
+  - {fileID: 11400000, guid: 2db6c49343fb4459aaf0560fab234f8d, type: 2}
+  - {fileID: 11400000, guid: 8b04cd11b178341c5b408b44ce37cb9d, type: 2}
+  - {fileID: 11400000, guid: 49d81d5024e6c404bba783296b5a037e, type: 2}
 --- !u!4 &2042742586
 Transform:
   m_ObjectHideFlags: 0

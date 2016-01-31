@@ -1,0 +1,111 @@
+
+Muscle.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Face
+  rotate: false
+  xy: 241, 37
+  size: 76, 99
+  orig: 78, 101
+  offset: 1, 1
+  index: -1
+Head
+  rotate: false
+  xy: 241, 138
+  size: 194, 156
+  orig: 196, 158
+  offset: 1, 1
+  index: -1
+LFoot
+  rotate: false
+  xy: 2, 2
+  size: 61, 25
+  orig: 63, 27
+  offset: 1, 1
+  index: -1
+LLowerArm
+  rotate: false
+  xy: 437, 226
+  size: 100, 68
+  orig: 102, 70
+  offset: 1, 1
+  index: -1
+LLowerLeg
+  rotate: true
+  xy: 727, 318
+  size: 24, 101
+  orig: 26, 103
+  offset: 1, 1
+  index: -1
+LUpperArm
+  rotate: true
+  xy: 319, 87
+  size: 49, 107
+  orig: 51, 109
+  offset: 1, 1
+  index: -1
+LUpperLeg
+  rotate: true
+  xy: 319, 61
+  size: 24, 101
+  orig: 26, 103
+  offset: 1, 1
+  index: -1
+Phone
+  rotate: false
+  xy: 2, 29
+  size: 237, 481
+  orig: 325, 591
+  offset: 46, 59
+  index: -1
+RFoot
+  rotate: true
+  xy: 997, 449
+  size: 61, 25
+  orig: 63, 27
+  offset: 1, 1
+  index: -1
+RLowerArm
+  rotate: false
+  xy: 895, 442
+  size: 100, 68
+  orig: 102, 70
+  offset: 1, 1
+  index: -1
+RLowerLeg
+  rotate: true
+  xy: 65, 3
+  size: 24, 101
+  orig: 26, 103
+  offset: 1, 1
+  index: -1
+RUpperArm
+  rotate: true
+  xy: 539, 245
+  size: 49, 107
+  orig: 51, 109
+  offset: 1, 1
+  index: -1
+RUpperLeg
+  rotate: true
+  xy: 437, 200
+  size: 24, 101
+  orig: 26, 103
+  offset: 1, 1
+  index: -1
+Sigarette
+  rotate: true
+  xy: 241, 296
+  size: 214, 484
+  orig: 256, 512
+  offset: 14, 13
+  index: -1
+Torso
+  rotate: false
+  xy: 727, 344
+  size: 166, 166
+  orig: 168, 168
+  offset: 1, 1
+  index: -1

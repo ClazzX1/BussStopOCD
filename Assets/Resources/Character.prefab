@@ -42,7 +42,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 32983c6fb1e3649e8926956cb754a8d1, type: 2}
+  - {fileID: 2100000, guid: 3e9285038af1a40d598fb930c03b751d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 3d1d815dfb9e84a1090a7941ee554466, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 267871f75857b4872b4abcf10717875e, type: 2}
   initialSkinName: default
   calculateNormals: 0
   calculateTangents: 0
@@ -274,7 +274,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: skeletonDataAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 3d1d815dfb9e84a1090a7941ee554466,
+      objectReference: {fileID: 11400000, guid: 267871f75857b4872b4abcf10717875e,
         type: 2}
     - target: {fileID: 0}
       propertyPath: initialSkinName

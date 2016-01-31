@@ -1,0 +1,111 @@
+
+CreepyGuy.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Face
+  rotate: false
+  xy: 241, 71
+  size: 79, 77
+  orig: 81, 79
+  offset: 1, 1
+  index: -1
+LFoot
+  rotate: false
+  xy: 241, 42
+  size: 76, 27
+  orig: 78, 29
+  offset: 1, 1
+  index: -1
+LLowerArm
+  rotate: false
+  xy: 386, 193
+  size: 43, 94
+  orig: 45, 96
+  offset: 1, 1
+  index: -1
+LLowerLeg
+  rotate: true
+  xy: 2, 2
+  size: 18, 124
+  orig: 20, 126
+  offset: 1, 1
+  index: -1
+RLowerLeg
+  rotate: true
+  xy: 2, 2
+  size: 18, 124
+  orig: 20, 126
+  offset: 1, 1
+  index: -1
+LUpperLeg
+  rotate: true
+  xy: 2, 2
+  size: 18, 124
+  orig: 20, 126
+  offset: 1, 1
+  index: -1
+RUpperLeg
+  rotate: true
+  xy: 2, 2
+  size: 18, 124
+  orig: 20, 126
+  offset: 1, 1
+  index: -1
+LUpperArm
+  rotate: true
+  xy: 727, 336
+  size: 43, 94
+  orig: 45, 96
+  offset: 1, 1
+  index: -1
+Layer 4
+  rotate: false
+  xy: 241, 150
+  size: 143, 137
+  orig: 145, 139
+  offset: 1, 1
+  index: -1
+Phone
+  rotate: false
+  xy: 2, 22
+  size: 237, 481
+  orig: 325, 591
+  offset: 46, 59
+  index: -1
+RFoot
+  rotate: true
+  xy: 322, 72
+  size: 76, 27
+  orig: 78, 29
+  offset: 1, 1
+  index: -1
+RLowerArm
+  rotate: false
+  xy: 835, 409
+  size: 43, 94
+  orig: 45, 96
+  offset: 1, 1
+  index: -1
+RUpperArm
+  rotate: false
+  xy: 431, 193
+  size: 43, 94
+  orig: 45, 96
+  offset: 1, 1
+  index: -1
+Sigarette
+  rotate: true
+  xy: 241, 289
+  size: 214, 484
+  orig: 256, 512
+  offset: 14, 13
+  index: -1
+Torso
+  rotate: false
+  xy: 727, 381
+  size: 106, 122
+  orig: 108, 124
+  offset: 1, 1
+  index: -1

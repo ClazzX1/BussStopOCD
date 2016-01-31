@@ -35,6 +35,9 @@ public class GameManager : MonoBehaviour
 	public List<AudioClip> musicClips;
 	public MusicPlayer musicPlayer;
 
+	public SkeletonDataAsset playerSkeleton;
+	public List<SkeletonDataAsset> otherSkeletons;
+
     private int round = 1;
 	private int score = 0;
 	private List<Character> characters = new List<Character>();
@@ -55,7 +58,7 @@ public class GameManager : MonoBehaviour
 		MovePattern.OnCorrectMove += OnCorrectMove;
 		BeatManager.OnBeat += OnBeat;
 
-		ChangeSpeed(beatManager.speed);
+		ChangeSpeed(1.0f);
 		UpdateScore(0);
 		round = 0;
         StageStart();
@@ -129,7 +132,7 @@ public class GameManager : MonoBehaviour
 
 		if (beatIndicatorSprite) 
 		{
-			Color color = Color.white;
+			Color color = Color.red;
 			if (state != InGameState.OTHERS_TURN &&	state != InGameState.PLAYER_TURN)
 				color.a = 0.0f;
 			beatIndicatorSprite.color = color;
@@ -171,7 +174,7 @@ public class GameManager : MonoBehaviour
 		}
 		foreach (Character character in characters) 
 		{
-			Animator animator = player.gameObject.GetComponent<Animator> ();
+			Animator animator = character.gameObject.GetComponent<Animator> ();
 			if (animator)
 				animator.speed = newSpeed;
 		}
@@ -205,11 +208,11 @@ public class GameManager : MonoBehaviour
 			Vector3 position = spawnPoint.position;
 			float offsetX = (float)((i + 1) / 2) * 2.2f;
 			position.x += (i % 2 == 0 ? -offsetX : offsetX);
-			Character character = CreateCharacter(position);
+			Character character = CreateCharacter(position, false);
 			characters.Add(character);
 		}
 			
-		player = CreateCharacter(playerSpawnPoint.position);
+		player = CreateCharacter(playerSpawnPoint.position, true);
 	}
 
 	public void KillCharacters()
@@ -227,7 +230,7 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	Character CreateCharacter(Vector3 position)
+	Character CreateCharacter(Vector3 position, bool isPlayer)
     {
         GameObject newObject = (GameObject)Instantiate(Resources.Load("Character"));
         newObject.transform.parent = transform;
@@ -236,6 +239,21 @@ public class GameManager : MonoBehaviour
 		Animator animator = newObject.GetComponent<Animator>();
 		if (animator)
 			animator.speed = beatManager.speed;
+
+		if (isPlayer) 
+		{
+			SkeletonAnimation skeletonAnimation = newObject.GetComponent<SkeletonAnimation> ();
+			skeletonAnimation.skeletonDataAsset = playerSkeleton;
+			skeletonAnimation.Reset ();
+		}
+		else
+		{
+			int index = Random.Range(0, otherSkeletons.Count);
+
+			SkeletonAnimation skeletonAnimation = newObject.GetComponent<SkeletonAnimation> ();
+			skeletonAnimation.skeletonDataAsset = otherSkeletons[index];
+			skeletonAnimation.Reset ();
+		}
 
 		Character character = newObject.GetComponent<Character>();
 		return character;
