@@ -170,13 +170,13 @@ public class GameManager : MonoBehaviour
 		{
 			Animator playerAnimator = player.gameObject.GetComponent<Animator> ();
 			if (playerAnimator)
-				playerAnimator.speed = newSpeed;
+				playerAnimator.speed = newSpeed * 1.5f;
 		}
 		foreach (Character character in characters) 
 		{
 			Animator animator = character.gameObject.GetComponent<Animator> ();
 			if (animator)
-				animator.speed = newSpeed;
+				animator.speed = newSpeed * 1.5f;
 		}
 	}
 
@@ -186,13 +186,16 @@ public class GameManager : MonoBehaviour
 		++round;
 
 		if (round == 1)
-			ChangeSpeed(0.75f);
+			ChangeSpeed(1.3333f);
 		if (round == 2)
-			ChangeSpeed(1.0f);
-		if (round == 3)
 			ChangeSpeed(1.5f);
+		if (round == 3)
+			ChangeSpeed(1.6666f);
 		if (round == 4)
-			ChangeSpeed(1.0f);
+			ChangeSpeed(1.5f);
+
+		if (musicClips.Count >= round)
+			musicPlayer.playMusic(musicClips[round - 1]);
 
 		if (musicClips.Count >= round)
 			musicPlayer.playMusic(musicClips[round - 1]);

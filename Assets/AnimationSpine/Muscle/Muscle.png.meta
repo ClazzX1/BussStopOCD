@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/AnimationSpine/Muscle/Muscle.png.meta
 guid: 7d8a71fa674714fe7b163387baaffccc
 timeCreated: 1454242661
+=======
+guid: 6b6e3a8628c5e4be69d0c6f33dc9974d
+timeCreated: 1454238082
+>>>>>>> d8ee13189122b763050565d704b286e5550e4eea:Assets/AnimationSpine/Muscle.png.meta
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
