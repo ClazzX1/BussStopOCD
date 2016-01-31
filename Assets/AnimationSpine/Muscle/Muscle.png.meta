@@ -1,11 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/AnimationSpine/Muscle/Muscle.png.meta
 guid: 7d8a71fa674714fe7b163387baaffccc
-timeCreated: 1454242661
-=======
-guid: 6b6e3a8628c5e4be69d0c6f33dc9974d
-timeCreated: 1454238082
->>>>>>> d8ee13189122b763050565d704b286e5550e4eea:Assets/AnimationSpine/Muscle.png.meta
+timeCreated: 1454244405
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -35,15 +30,15 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
-  nPOTScale: 0
+    wrapMode: -1
+  nPOTScale: 1
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 0
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
