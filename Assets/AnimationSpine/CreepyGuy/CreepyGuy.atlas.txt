@@ -6,21 +6,21 @@ filter: Linear,Linear
 repeat: none
 Face
   rotate: false
-  xy: 241, 71
+  xy: 386, 210
   size: 79, 77
   orig: 81, 79
   offset: 1, 1
   index: -1
 LFoot
-  rotate: false
-  xy: 241, 42
+  rotate: true
+  xy: 349, 72
   size: 76, 27
   orig: 78, 29
   offset: 1, 1
   index: -1
 LLowerArm
-  rotate: false
-  xy: 386, 193
+  rotate: true
+  xy: 727, 321
   size: 43, 94
   orig: 45, 96
   offset: 1, 1
@@ -39,13 +39,6 @@ RLowerLeg
   orig: 20, 126
   offset: 1, 1
   index: -1
-LUpperLeg
-  rotate: true
-  xy: 2, 2
-  size: 18, 124
-  orig: 20, 126
-  offset: 1, 1
-  index: -1
 RUpperLeg
   rotate: true
   xy: 2, 2
@@ -53,9 +46,16 @@ RUpperLeg
   orig: 20, 126
   offset: 1, 1
   index: -1
-LUpperArm
+LUpperLeg
   rotate: true
-  xy: 727, 336
+  xy: 2, 2
+  size: 18, 124
+  orig: 20, 126
+  offset: 1, 1
+  index: -1
+LUpperArm
+  rotate: false
+  xy: 872, 409
   size: 43, 94
   orig: 45, 96
   offset: 1, 1
@@ -75,24 +75,31 @@ Phone
   offset: 46, 59
   index: -1
 RFoot
-  rotate: true
-  xy: 322, 72
+  rotate: false
+  xy: 386, 181
   size: 76, 27
   orig: 78, 29
   offset: 1, 1
   index: -1
 RLowerArm
-  rotate: false
-  xy: 835, 409
+  rotate: true
+  xy: 467, 244
   size: 43, 94
   orig: 45, 96
   offset: 1, 1
   index: -1
 RUpperArm
   rotate: false
-  xy: 431, 193
+  xy: 917, 409
   size: 43, 94
   orig: 45, 96
+  offset: 1, 1
+  index: -1
+RedFace
+  rotate: false
+  xy: 727, 366
+  size: 143, 137
+  orig: 145, 139
   offset: 1, 1
   index: -1
 Sigarette
@@ -104,7 +111,7 @@ Sigarette
   index: -1
 Torso
   rotate: false
-  xy: 727, 381
+  xy: 241, 26
   size: 106, 122
   orig: 108, 124
   offset: 1, 1

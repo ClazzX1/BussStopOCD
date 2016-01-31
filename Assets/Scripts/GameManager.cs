@@ -294,6 +294,7 @@ public class GameManager : MonoBehaviour
 
 		if (HeartCounter.totalHearts <= 0) 
 		{
+			player.Faint ();
 			movePattern.StopPattern ();
 			state = InGameState.AMBULANCE_COMING;
 			ambulanceBuss.StartBussComing ();
