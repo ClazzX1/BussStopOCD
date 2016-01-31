@@ -1,0 +1,104 @@
+
+Rockabilly.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Face
+  rotate: false
+  xy: 422, 201
+  size: 61, 53
+  orig: 61, 53
+  offset: 0, 0
+  index: -1
+Face 2
+  rotate: false
+  xy: 45, 68
+  size: 68, 54
+  orig: 68, 54
+  offset: 0, 0
+  index: -1
+Hair
+  rotate: false
+  xy: 45, 124
+  size: 132, 130
+  orig: 132, 130
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 179, 150
+  size: 118, 104
+  orig: 118, 104
+  offset: 0, 0
+  index: -1
+LFoot
+  rotate: false
+  xy: 299, 138
+  size: 85, 26
+  orig: 85, 26
+  offset: 0, 0
+  index: -1
+LLowerArm
+  rotate: true
+  xy: 179, 130
+  size: 18, 101
+  orig: 18, 101
+  offset: 0, 0
+  index: -1
+RUpperArm
+  rotate: true
+  xy: 179, 130
+  size: 18, 101
+  orig: 18, 101
+  offset: 0, 0
+  index: -1
+LUpperArm
+  rotate: true
+  xy: 179, 130
+  size: 18, 101
+  orig: 18, 101
+  offset: 0, 0
+  index: -1
+LLowerLeg
+  rotate: true
+  xy: 2, 2
+  size: 18, 154
+  orig: 18, 154
+  offset: 0, 0
+  index: -1
+RUpperLeg
+  rotate: true
+  xy: 2, 2
+  size: 18, 154
+  orig: 18, 154
+  offset: 0, 0
+  index: -1
+RLowerLeg
+  rotate: true
+  xy: 2, 2
+  size: 18, 154
+  orig: 18, 154
+  offset: 0, 0
+  index: -1
+LUpperLeg
+  rotate: false
+  xy: 2, 22
+  size: 41, 232
+  orig: 41, 232
+  offset: 0, 0
+  index: -1
+RFoot
+  rotate: false
+  xy: 45, 40
+  size: 85, 26
+  orig: 85, 26
+  offset: 0, 0
+  index: -1
+Torso
+  rotate: false
+  xy: 299, 166
+  size: 121, 88
+  orig: 121, 88
+  offset: 0, 0
+  index: -1

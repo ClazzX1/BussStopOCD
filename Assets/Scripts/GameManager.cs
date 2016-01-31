@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
 	public SpriteRenderer beatIndicatorSprite;
 	public FlashTrigger redFlash;
 	public Text highscoreText;
+	public List<AudioClip> musicClips;
 
     private int round = 1;
 	private int score = 0;
@@ -40,11 +41,13 @@ public class GameManager : MonoBehaviour
 
 	private MovePattern movePattern;
 	private BeatManager beatManager;
+	private MusicPlayer musicPlayer;
 
 	void Start ()
     {
 		movePattern = GetComponent<MovePattern>();
-		beatManager = GetComponent<BeatManager>(); 
+		beatManager = GetComponent<BeatManager>();
+		musicPlayer = GetComponent<MusicPlayer>();
 
 		MovePattern.OnPatternFrameChange += OnPatternFrameChange;
 		MovePattern.OnPatternPlayerTurnStart += OnPatternPlayerTurnStart;
@@ -182,6 +185,9 @@ public class GameManager : MonoBehaviour
 			ChangeSpeed(1.5f);
 		if (round == 4)
 			ChangeSpeed(1.0f);
+
+		if (musicClips.Count >= round)
+			musicPlayer.playMusic(musicClips[round - 1]);
 
 		buss.StartBussComing();
     }
