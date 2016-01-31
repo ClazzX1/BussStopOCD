@@ -192,7 +192,7 @@ public class GameManager : MonoBehaviour
 		if (round == 3)
 			ChangeSpeed(1.6666f);
 		if (round == 4)
-			ChangeSpeed(1.5f);
+			ChangeSpeed(1.6666f);
 
 		if (musicClips.Count >= round)
 			musicPlayer.playMusic(musicClips[round - 1]);
