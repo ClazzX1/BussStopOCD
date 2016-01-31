@@ -175,13 +175,13 @@ public class GameManager : MonoBehaviour
 		++round;
 
 		if (round == 1)
-			ChangeSpeed(0.75f);
+			ChangeSpeed(1.3333f);
 		if (round == 2)
-			ChangeSpeed(1.0f);
+			ChangeSpeed(1.3333f);
 		if (round == 3)
 			ChangeSpeed(1.5f);
 		if (round == 4)
-			ChangeSpeed(1.0f);
+			ChangeSpeed(1.5f);
 
 		buss.StartBussComing();
     }
