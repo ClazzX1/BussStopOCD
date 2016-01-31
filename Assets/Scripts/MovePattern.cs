@@ -96,7 +96,7 @@ public class MovePattern : MonoBehaviour
 
 			if (!beatManager.IsInTheBeat())
 				isFail = true;
-			if (moveIndex != moveList[playerMoveFrame])
+			if (playerMoveFrame >= moveList.Count || moveIndex != moveList[playerMoveFrame])
 				isFail = true;
 
 			++playerMoveFrame;
@@ -159,9 +159,10 @@ public class MovePattern : MonoBehaviour
 		moveList.Clear();
 		for (int i = 0; i < length; ++i) 
 		{
-			int move = Random.Range(0, 4);
+			int move = Random.Range(0, 3);
 			moveList.Add(move);
 		}
+		moveList[moveList.Count - 1] = 3;
 	}
 
 	private void PatternFailed()

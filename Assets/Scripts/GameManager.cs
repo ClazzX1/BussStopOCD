@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
 	public FlashTrigger redFlash;
 	public Text highscoreText;
 	public List<AudioClip> musicClips;
+	public MusicPlayer musicPlayer;
 
     private int round = 1;
 	private int score = 0;
@@ -41,13 +42,11 @@ public class GameManager : MonoBehaviour
 
 	private MovePattern movePattern;
 	private BeatManager beatManager;
-	private MusicPlayer musicPlayer;
 
 	void Start ()
     {
 		movePattern = GetComponent<MovePattern>();
 		beatManager = GetComponent<BeatManager>();
-		musicPlayer = GetComponent<MusicPlayer>();
 
 		MovePattern.OnPatternFrameChange += OnPatternFrameChange;
 		MovePattern.OnPatternPlayerTurnStart += OnPatternPlayerTurnStart;
@@ -106,8 +105,11 @@ public class GameManager : MonoBehaviour
 		}
 		else if (state == InGameState.AMBULANCE_LEAVING) 
 		{
-			if (ambulanceBuss.isGoneAway)
-				AmbulanceGoneAway();
+			if (ambulanceBuss.isGoneAway) 
+			{
+				AmbulanceGoneAway ();
+				state = InGameState.IDLE;
+			}
 		}
 		else if (state == InGameState.END_BUSS_COMING) 
 		{
@@ -125,10 +127,13 @@ public class GameManager : MonoBehaviour
 			}
 		} 
 
-		Color color = Color.white;
-		if (state != InGameState.OTHERS_TURN &&	state != InGameState.PLAYER_TURN)
-			color.a = 0.0f;
-		beatIndicatorSprite.color = color;
+		if (beatIndicatorSprite) 
+		{
+			Color color = Color.white;
+			if (state != InGameState.OTHERS_TURN &&	state != InGameState.PLAYER_TURN)
+				color.a = 0.0f;
+			beatIndicatorSprite.color = color;
+		}
 
 		if (player)
 		{
@@ -156,19 +161,19 @@ public class GameManager : MonoBehaviour
 		beatManager.speed = newSpeed;
 		beatIndicator.speed = newSpeed;
 
-		// TODO: change music speed
+		// TODO: change music speed?
 
 		if (player) 
 		{
 			Animator playerAnimator = player.gameObject.GetComponent<Animator> ();
 			if (playerAnimator)
-				playerAnimator.speed = newSpeed;
+				playerAnimator.speed = newSpeed * 1.5f;
 		}
 		foreach (Character character in characters) 
 		{
 			Animator animator = player.gameObject.GetComponent<Animator> ();
 			if (animator)
-				animator.speed = newSpeed;
+				animator.speed = newSpeed * 1.5f;
 		}
 	}
 
@@ -189,16 +194,19 @@ public class GameManager : MonoBehaviour
 		if (musicClips.Count >= round)
 			musicPlayer.playMusic(musicClips[round - 1]);
 
+		if (musicClips.Count >= round)
+			musicPlayer.playMusic(musicClips[round - 1]);
+
 		buss.StartBussComing();
     }
 
 	public void SpawnCharacters()
 	{
-		int characterCount = 1 + round;
+		int characterCount = 1 + round / 2;
 		for (int i = 0; i < characterCount; ++i)
 		{
 			Vector3 position = spawnPoint.position;
-			float offsetX = (float)((i + 1) / 2) * 1.0f;
+			float offsetX = (float)((i + 1) / 2) * 2.2f;
 			position.x += (i % 2 == 0 ? -offsetX : offsetX);
 			Character character = CreateCharacter(position);
 			characters.Add(character);
@@ -283,7 +291,7 @@ public class GameManager : MonoBehaviour
 	private void BussGoneAway()
 	{
 		state = InGameState.OTHERS_TURN;
-		movePattern.StartPattern(2 + round, 2.5f);
+		movePattern.StartPattern(2 + round / 2, 2.5f);
 	}
 
 	private void AmbulanceArrived()

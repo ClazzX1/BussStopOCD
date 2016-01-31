@@ -53,6 +53,11 @@ public class ScoreList : MonoBehaviour
 		data.scoreList.Add(info);
 		data.scoreList.Sort(SortByScore);
 
+		if (data.scoreList.Count > listSize) 
+		{
+			data.scoreList.RemoveAt(data.scoreList.Count - 1);
+		}
+
 		Save ();
 	}
 
