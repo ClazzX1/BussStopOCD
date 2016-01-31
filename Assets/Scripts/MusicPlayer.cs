@@ -5,8 +5,11 @@ public class MusicPlayer : MonoBehaviour
 {
 	public AudioClip musicClip;
 
+	private AudioSource musicSource;
+
 	void Start () 
 	{
+		musicSource = GetComponent<AudioSource>();
 	}
 	
 	void Update () 

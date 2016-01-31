@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ScoreManager : MonoBehaviour {
 
 
 	static ScoreManager instance = null;
 
-	public Text highScoreText;
+	public List<Text> highScoreTexts;
 
 	void Awake () {
 
@@ -38,8 +39,12 @@ public class ScoreManager : MonoBehaviour {
 			if (ScoreList.Instance.data.scoreList.Count <= i)
 				continue;
 
-			highScoreText.text = i + 1 + ". " + ScoreList.Instance.data.scoreList[i].score.ToString ();
-			Instantiate (highScoreText, new Vector2 (415, 420 - (40 * (i + 1))), Quaternion.identity);
+			highScoreTexts[i].text = i + 1 + ". " + ScoreList.Instance.data.scoreList[i].score.ToString ();
 		}
+	}
+
+	public void QuitGame()
+	{
+		Application.Quit ();
 	}
 }

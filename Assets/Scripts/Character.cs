@@ -64,4 +64,9 @@ public class Character : MonoBehaviour
 			audioSource.PlayOneShot (busAudio [index]);
 		}
 	}
+
+	public void Faint()
+	{
+		spine.state.SetAnimation(0, "Fainting", false);
+	}
 }
